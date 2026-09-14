@@ -1,0 +1,1594 @@
+/* =========================================================
+   PERSONAL PORTFOLIO
+   Accessible Minimal Navy / Blue Theme
+   ========================================================= */
+
+/* =========================================================
+   1. VARIABLES
+   ========================================================= */
+
+:root {
+  /* Main colors */
+  --background: #f7f8fa;
+  --surface: #ffffff;
+
+  --text: #172033;
+  --muted: #5f6877;
+
+  --line: #dfe3e8;
+
+  /* Brand colors */
+  --primary: #315b8a;
+  --primary-light: #e9f0f7;
+  --primary-dark: #203d5d;
+
+  /* Page colors */
+  --activities-bg: #f0f4f8;
+
+  --contact-bg: #172033;
+  --contact-text: #f7f8fa;
+  --contact-muted: #bdc5d1;
+  --contact-accent: #9ab6d1;
+
+  /* Layout */
+  --container: 1150px;
+
+  /* Animation */
+  --transition: 0.25s ease;
+}
+
+/* =========================================================
+   2. RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  /*
+     16px is a comfortable base size.
+     rem units throughout the site will scale from this.
+  */
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+
+  background: var(--background);
+  color: var(--text);
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 1rem;
+
+  /*
+     More vertical spacing makes paragraphs
+     easier to follow.
+  */
+  line-height: 1.7;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+img {
+  display: block;
+
+  width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--primary);
+
+  color: white;
+}
+
+/* =========================================================
+   3. GENERAL
+   ========================================================= */
+
+.container {
+  width: min(calc(100% - 48px), var(--container));
+
+  margin-inline: auto;
+}
+
+/* Small section labels */
+
+.small-label {
+  color: var(--primary);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   4. ACCESSIBILITY
+   ========================================================= */
+
+/*
+   Makes keyboard navigation visible.
+   Useful for visitors who use Tab instead of a mouse.
+*/
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary);
+
+  outline-offset: 4px;
+}
+
+/* Dark contact page focus */
+
+.contact-body a:focus-visible,
+.contact-body button:focus-visible {
+  outline-color: var(--contact-accent);
+}
+
+/* =========================================================
+   5. NAVIGATION
+   ========================================================= */
+
+.header {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  background: rgba(247, 248, 250, 0.94);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(23, 32, 51, 0.08);
+}
+
+.navbar {
+  min-height: 78px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--primary);
+
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  letter-spacing: -0.03em;
+}
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: color var(--transition);
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--primary);
+
+  transform: scaleX(0);
+
+  transform-origin: right;
+
+  transition: transform var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.nav-links a.active {
+  font-weight: 700;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+
+  transform-origin: left;
+}
+
+/* =========================================================
+   6. MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+
+  width: 26px;
+  height: 2px;
+
+  margin: 7px auto;
+
+  background: var(--text);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* =========================================================
+   7. HOME PAGE
+   ========================================================= */
+
+.home {
+  min-height: calc(100vh - 70px);
+
+  padding: 150px 0 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  background: var(--background);
+}
+
+.home-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(300px, 0.85fr);
+
+  gap: 35px;
+
+  align-items: center;
+}
+
+.home-content {
+  position: relative;
+}
+
+.home h1 {
+  max-width: 850px;
+
+  margin-top: 25px;
+
+  color: var(--text);
+
+  font-size: clamp(4rem, 9vw, 8.5rem);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.07em;
+}
+
+.home h1 span {
+  color: var(--primary);
+}
+
+.intro {
+  max-width: 570px;
+
+  margin-top: 35px;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+
+  line-height: 1.75;
+}
+
+.home-links {
+  margin-top: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.home-links > a {
+  transition: color var(--transition);
+}
+
+.home-links > a:not(.primary-link) {
+  color: var(--muted);
+}
+
+.home-links > a:not(.primary-link):hover {
+  color: var(--primary);
+}
+
+.primary-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-bottom: 4px;
+
+  color: var(--primary);
+
+  border-bottom: 2px solid var(--primary);
+}
+
+.primary-link span {
+  transition: transform var(--transition);
+}
+
+.primary-link:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   8. PROFILE PHOTO
+   ========================================================= */
+
+.home-photo,
+.about-photo {
+  width: 100%;
+}
+
+.home-photo {
+  position: relative;
+}
+
+.home-photo img {
+  width: 110%;
+
+  aspect-ratio: 4 / 5;
+
+  object-fit: cover;
+}
+
+.about-photo img {
+  width: 100%;
+
+  object-fit: cover;
+}
+
+/* Decorative line */
+
+.home-photo::after {
+  content: "";
+
+  display: block;
+
+  width: 45%;
+  height: 3px;
+
+  margin-top: 14px;
+  margin-left: auto;
+
+  background: var(--primary);
+}
+
+/* =========================================================
+   9. INNER PAGES
+   ========================================================= */
+
+.page {
+  min-height: 100vh;
+
+  padding: 150px 0 100px;
+}
+
+.page-heading {
+  max-width: 850px;
+
+  margin-bottom: 80px;
+}
+
+.page-heading h1 {
+  margin-top: 20px;
+
+  color: var(--text);
+
+  font-size: clamp(3.5rem, 8vw, 7rem);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.06em;
+}
+
+.page-heading > p:last-child {
+  max-width: 600px;
+
+  margin-top: 25px;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   10. ABOUT PAGE
+   ========================================================= */
+
+.about-layout {
+  display: grid;
+
+  grid-template-columns:
+    0.7fr
+    1.3fr;
+
+  gap: 65px;
+
+  align-items: start;
+}
+
+.about-text {
+  max-width: 680px;
+}
+
+.about-text p {
+  margin-bottom: 22px;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+
+  line-height: 1.75;
+}
+
+.about-text .about-intro {
+  margin-bottom: 35px;
+
+  color: var(--text);
+
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+
+  line-height: 1.4;
+
+  letter-spacing: -0.03em;
+}
+
+/* =========================================================
+   11. ABOUT CONTENT SECTIONS
+   Education / Skills / Interests
+   ========================================================= */
+
+.content-section {
+  margin-top: 120px;
+
+  padding-top: 45px;
+
+  border-top: 1px solid var(--line);
+}
+
+.content-title {
+  display: grid;
+
+  grid-template-columns:
+    200px
+    1fr;
+
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+.content-title .small-label {
+  color: var(--primary);
+}
+
+.content-title > p:last-child {
+  max-width: 500px;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   12. EDUCATION
+   ========================================================= */
+
+.simple-list {
+  border-top: 1px solid var(--line);
+}
+
+.list-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    padding var(--transition),
+    border-color var(--transition);
+}
+
+.list-row:hover {
+  padding-left: 12px;
+
+  border-color: var(--primary);
+}
+
+.list-row h3 {
+  color: var(--text);
+
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+.list-row p,
+.list-row > span {
+  margin-top: 6px;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   13. SKILLS
+   ========================================================= */
+
+.skills-list {
+  border-top: 1px solid var(--line);
+}
+
+.skill-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    padding var(--transition),
+    border-color var(--transition);
+}
+
+.skill-row:hover {
+  padding-left: 10px;
+
+  border-color: var(--primary);
+}
+
+.skill-row > span:first-child {
+  color: var(--text);
+
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.skill-level {
+  padding: 7px 13px;
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  border-radius: 100px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+}
+
+/* Beginner */
+
+.skill-level.beginner {
+  background: #eef2f6;
+
+  color: #566171;
+}
+
+/* Intermediate */
+
+.skill-level.intermediate {
+  background: var(--primary-light);
+
+  color: var(--primary);
+}
+
+/* Expert */
+
+.skill-level.expert {
+  background: var(--primary);
+
+  color: white;
+}
+
+/* =========================================================
+   14. INTERESTS / PERSONAL SKILLS
+   ========================================================= */
+
+.interest-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.interest-list span {
+  padding: 10px 16px;
+
+  color: var(--muted);
+
+  border: 1px solid var(--line);
+
+  border-radius: 100px;
+
+  font-size: 0.95rem;
+
+  line-height: 1.4;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.interest-list span:hover {
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  border-color: #cad8e6;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   15. ACTIVITIES PAGE
+   ========================================================= */
+
+.activities-page {
+  background: var(--activities-bg);
+}
+
+.activities-page .header {
+  background: rgba(240, 244, 248, 0.94);
+}
+
+.activities-page .page-heading h1 {
+  color: var(--text);
+}
+
+.document-list {
+  border-top: 1px solid var(--line);
+}
+
+.document-row {
+  display: grid;
+
+  grid-template-columns:
+    60px
+    1fr
+    auto;
+
+  gap: 30px;
+
+  padding: 34px 0;
+
+  align-items: center;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    padding var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.document-row:hover {
+  padding-left: 12px;
+  padding-right: 12px;
+
+  background: var(--surface);
+
+  border-color: #c9d4df;
+}
+
+.document-number {
+  color: var(--primary);
+
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.document-type {
+  color: var(--muted);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  letter-spacing: 0.07em;
+}
+
+.document-info h2 {
+  margin: 5px 0;
+
+  color: var(--text);
+
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.02em;
+}
+
+.document-info > p:last-child {
+  color: var(--muted);
+
+  font-size: 0.95rem;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   16. DOCUMENT ACTIONS
+   ========================================================= */
+
+.document-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  white-space: nowrap;
+}
+
+/* View */
+
+.view-link {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 9px 17px;
+
+  background: var(--primary);
+
+  color: white;
+
+  border: 1px solid var(--primary);
+
+  border-radius: 100px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+.view-link:hover {
+  background: var(--primary-dark);
+
+  border-color: var(--primary-dark);
+
+  transform: translateY(-2px);
+}
+
+/* Download */
+
+.download-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 42px;
+
+  padding: 8px 2px;
+
+  color: var(--primary);
+
+  border-bottom: 2px solid var(--primary);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  transition:
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.download-link:hover {
+  color: var(--primary-dark);
+
+  border-color: var(--primary-dark);
+}
+
+/* =========================================================
+   17. CERTIFICATES PAGE
+   ========================================================= */
+
+.certificate-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 60px 30px;
+}
+
+.certificate {
+  min-width: 0;
+}
+
+.certificate-image {
+  display: block;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  background: var(--primary-light);
+
+  border: 1px solid transparent;
+
+  transition:
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.certificate-image:hover {
+  background: #edf3f9;
+
+  border-color: #cad8e6;
+}
+
+.certificate-image img {
+  aspect-ratio: 1.4;
+
+  object-fit: contain;
+
+  transition: transform 0.4s ease;
+}
+
+.certificate-image:hover img {
+  transform: scale(1.02);
+}
+
+.certificate-details {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 20px;
+}
+
+.certificate-details .small-label {
+  color: var(--primary);
+}
+
+.certificate-details h2 {
+  margin-top: 6px;
+
+  color: var(--text);
+
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.certificate-details p:not(.small-label) {
+  margin-top: 5px;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
+}
+
+.certificate-details > a {
+  padding: 7px 2px;
+
+  color: var(--primary);
+
+  border-bottom: 2px solid var(--primary);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.certificate-details > a:hover {
+  color: var(--primary-dark);
+
+  border-color: var(--primary-dark);
+}
+
+/* =========================================================
+   18. CONTACT PAGE
+   ========================================================= */
+
+.contact-body {
+  background: var(--contact-bg);
+
+  color: var(--contact-text);
+}
+
+.contact-page {
+  min-height: calc(100vh - 70px);
+
+  padding: 170px 0 100px;
+
+  background: var(--contact-bg);
+
+  color: var(--contact-text);
+}
+
+.contact-page .small-label {
+  color: var(--contact-accent);
+}
+
+.contact-page h1 {
+  margin-top: 25px;
+
+  color: var(--contact-text);
+
+  font-size: clamp(4rem, 11vw, 10rem);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.07em;
+}
+
+.contact-description {
+  max-width: 550px;
+
+  margin-top: 35px;
+
+  color: var(--contact-muted);
+
+  font-size: 1.05rem;
+
+  line-height: 1.75;
+}
+
+.big-email {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 50px;
+
+  padding-bottom: 5px;
+
+  color: var(--contact-text);
+
+  border-bottom: 2px solid var(--contact-accent);
+
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
+}
+
+.big-email span {
+  color: var(--contact-accent);
+
+  transition: transform var(--transition);
+}
+
+.big-email:hover span {
+  transform: translate(4px, -4px);
+}
+
+.contact-links {
+  margin-top: 100px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.contact-links a {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 58px;
+
+  padding: 18px 0;
+
+  color: var(--contact-muted);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition:
+    color var(--transition),
+    padding var(--transition);
+}
+
+.contact-links a:hover {
+  padding-left: 8px;
+  padding-right: 8px;
+
+  color: white;
+}
+
+/* =========================================================
+   19. CONTACT PAGE NAVIGATION
+   ========================================================= */
+
+.contact-body .header {
+  background: rgba(23, 32, 51, 0.94);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-body .logo {
+  color: white;
+}
+
+.contact-body .nav-links a {
+  color: #bdc5d1;
+}
+
+.contact-body .nav-links a::after {
+  background: white;
+}
+
+.contact-body .nav-links a:hover,
+.contact-body .nav-links a.active {
+  color: white;
+}
+
+.contact-body .menu-button span {
+  background: white;
+}
+
+/* =========================================================
+   20. FOOTER
+   ========================================================= */
+
+.footer {
+  padding: 28px 0;
+
+  background: var(--background);
+
+  border-top: 1px solid var(--line);
+}
+
+.footer-content {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+.footer-content a {
+  font-weight: 500;
+
+  transition: color var(--transition);
+}
+
+.footer-content a:hover {
+  color: var(--primary);
+}
+
+/* Contact footer */
+
+.contact-body .footer {
+  background: var(--contact-bg);
+
+  color: #bdc5d1;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contact-body .footer-content {
+  color: #bdc5d1;
+}
+
+.contact-body .footer-content a:hover {
+  color: white;
+}
+
+/* =========================================================
+   21. TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .home-photo {
+    max-width: 350px;
+  }
+
+  .home-photo img {
+    width: 100%;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .about-photo {
+    max-width: 350px;
+  }
+
+  .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   22. MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+  /* -----------------------------------------
+     GENERAL
+     ----------------------------------------- */
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  /* -----------------------------------------
+     NAVIGATION
+     ----------------------------------------- */
+
+  .menu-button {
+    display: block;
+
+    position: relative;
+
+    z-index: 1002;
+  }
+
+  .menu-button.active span:first-child {
+    transform: translateY(4.5px) rotate(45deg);
+  }
+
+  .menu-button.active span:last-child {
+    transform: translateY(-4.5px) rotate(-45deg);
+  }
+
+  .nav-links {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1001;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 24px;
+
+    padding: 40px;
+
+    background: var(--background);
+
+    transform: translateY(-100%);
+
+    transition: transform 0.4s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    color: var(--text);
+
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    letter-spacing: -0.04em;
+  }
+
+  .nav-links a::after {
+    bottom: -3px;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--primary);
+  }
+
+  /* -----------------------------------------
+     CONTACT MOBILE NAVIGATION
+     ----------------------------------------- */
+
+  .contact-body .nav-links {
+    background: var(--contact-bg);
+  }
+
+  .contact-body .nav-links a {
+    color: var(--contact-muted);
+  }
+
+  .contact-body .nav-links a:hover,
+  .contact-body .nav-links a.active {
+    color: white;
+  }
+
+  /* -----------------------------------------
+     HOME
+     ----------------------------------------- */
+
+  .home {
+    min-height: auto;
+
+    padding: 125px 0 80px;
+  }
+
+  .home h1 {
+    font-size: clamp(3.6rem, 18vw, 6rem);
+
+    line-height: 0.95;
+  }
+
+  .intro {
+    margin-top: 28px;
+
+    font-size: 1rem;
+  }
+
+  .home-links {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    font-size: 1rem;
+  }
+
+  .home-photo {
+    max-width: 300px;
+  }
+
+  /* -----------------------------------------
+     INNER PAGES
+     ----------------------------------------- */
+
+  .page {
+    padding: 125px 0 80px;
+  }
+
+  .page-heading {
+    margin-bottom: 55px;
+  }
+
+  .page-heading h1 {
+    font-size: clamp(3.2rem, 15vw, 5.5rem);
+
+    line-height: 1;
+  }
+
+  /* -----------------------------------------
+     ABOUT
+     ----------------------------------------- */
+
+  .about-layout {
+    gap: 40px;
+  }
+
+  .about-photo {
+    max-width: 300px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  /* -----------------------------------------
+     CONTENT
+     ----------------------------------------- */
+
+  .content-section {
+    margin-top: 80px;
+
+    padding-top: 35px;
+  }
+
+  .content-title {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  /* -----------------------------------------
+     EDUCATION
+     ----------------------------------------- */
+
+  .list-row {
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+  .list-row:hover {
+    padding-left: 8px;
+  }
+
+  /* -----------------------------------------
+     SKILLS
+     ----------------------------------------- */
+
+  .skill-row {
+    gap: 15px;
+  }
+
+  /* -----------------------------------------
+     DOCUMENTS / ACTIVITIES
+     ----------------------------------------- */
+
+  .document-row {
+    grid-template-columns:
+      35px
+      1fr;
+
+    gap: 12px 15px;
+  }
+
+  .document-row:hover {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .document-actions {
+    grid-column: 2;
+
+    justify-self: start;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 8px;
+  }
+
+  .document-info h2 {
+    font-size: 1.25rem;
+  }
+
+  .view-link,
+  .download-link {
+    font-size: 0.9rem;
+  }
+
+  /* -----------------------------------------
+     CERTIFICATES
+     ----------------------------------------- */
+
+  .certificate-grid {
+    gap: 50px;
+  }
+
+  .certificate-image {
+    padding: 20px;
+  }
+
+  .certificate-details {
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  /* -----------------------------------------
+     CONTACT
+     ----------------------------------------- */
+
+  .contact-page {
+    min-height: calc(100vh - 70px);
+
+    padding: 130px 0 80px;
+  }
+
+  .contact-page h1 {
+    font-size: clamp(3.7rem, 18vw, 6.5rem);
+
+    line-height: 0.95;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+  }
+
+  .big-email {
+    word-break: break-word;
+  }
+
+  .contact-links {
+    margin-top: 75px;
+  }
+
+  /* -----------------------------------------
+     FOOTER
+     ----------------------------------------- */
+
+  .footer-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================================
+   23. VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .home h1 {
+    font-size: 3.4rem;
+  }
+
+  .page-heading h1 {
+    font-size: 3.1rem;
+  }
+
+  .contact-page h1 {
+    font-size: 3.7rem;
+  }
+
+  .skill-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .certificate-details {
+    flex-direction: column;
+  }
+
+  .document-row {
+    grid-template-columns:
+      30px
+      1fr;
+  }
+}
+
+/* =========================================================
+   24. REDUCED MOTION / ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+
+    animation: none !important;
+  }
+}
