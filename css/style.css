@@ -1,7 +1,9 @@
 /* =========================================================
    PERSONAL PORTFOLIO
    Accessible Minimal Navy / Blue Theme
+   Mobile Optimized
    ========================================================= */
+
 
 /* =========================================================
    1. VARIABLES
@@ -37,6 +39,7 @@
   --transition: 0.25s ease;
 }
 
+
 /* =========================================================
    2. RESET
    ========================================================= */
@@ -51,10 +54,6 @@
 html {
   scroll-behavior: smooth;
 
-  /*
-     16px is a comfortable base size.
-     rem units throughout the site will scale from this.
-  */
   font-size: 16px;
 }
 
@@ -67,12 +66,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 
   font-size: 1rem;
-
-  /*
-     More vertical spacing makes paragraphs
-     easier to follow.
-  */
   line-height: 1.7;
+
+  overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
 }
@@ -87,6 +83,7 @@ img {
   display: block;
 
   width: 100%;
+  max-width: 100%;
 }
 
 button {
@@ -99,6 +96,7 @@ button {
   color: white;
 }
 
+
 /* =========================================================
    3. GENERAL
    ========================================================= */
@@ -108,8 +106,6 @@ button {
 
   margin-inline: auto;
 }
-
-/* Small section labels */
 
 .small-label {
   color: var(--primary);
@@ -122,14 +118,10 @@ button {
   text-transform: uppercase;
 }
 
+
 /* =========================================================
    4. ACCESSIBILITY
    ========================================================= */
-
-/*
-   Makes keyboard navigation visible.
-   Useful for visitors who use Tab instead of a mouse.
-*/
 
 a:focus-visible,
 button:focus-visible {
@@ -138,12 +130,11 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
-/* Dark contact page focus */
-
 .contact-body a:focus-visible,
 .contact-body button:focus-visible {
   outline-color: var(--contact-accent);
 }
+
 
 /* =========================================================
    5. NAVIGATION
@@ -241,6 +232,7 @@ button:focus-visible {
   transform-origin: left;
 }
 
+
 /* =========================================================
    6. MOBILE MENU BUTTON
    ========================================================= */
@@ -275,12 +267,13 @@ button:focus-visible {
     opacity 0.3s ease;
 }
 
+
 /* =========================================================
    7. HOME PAGE
    ========================================================= */
 
 .home {
-  min-height: calc(100vh - 70px);
+  min-height: 100vh;
 
   padding: 150px 0 90px;
 
@@ -305,6 +298,8 @@ button:focus-visible {
 
 .home-content {
   position: relative;
+
+  min-width: 0;
 }
 
 .home h1 {
@@ -386,6 +381,7 @@ button:focus-visible {
   transform: translate(3px, -3px);
 }
 
+
 /* =========================================================
    8. PROFILE PHOTO
    ========================================================= */
@@ -397,10 +393,12 @@ button:focus-visible {
 
 .home-photo {
   position: relative;
+
+  min-width: 0;
 }
 
 .home-photo img {
-  width: 110%;
+  width: 100%;
 
   aspect-ratio: 4 / 5;
 
@@ -412,8 +410,6 @@ button:focus-visible {
 
   object-fit: cover;
 }
-
-/* Decorative line */
 
 .home-photo::after {
   content: "";
@@ -428,6 +424,7 @@ button:focus-visible {
 
   background: var(--primary);
 }
+
 
 /* =========================================================
    9. INNER PAGES
@@ -471,6 +468,7 @@ button:focus-visible {
   line-height: 1.7;
 }
 
+
 /* =========================================================
    10. ABOUT PAGE
    ========================================================= */
@@ -513,6 +511,7 @@ button:focus-visible {
   letter-spacing: -0.03em;
 }
 
+
 /* =========================================================
    11. ABOUT CONTENT SECTIONS
    Education / Skills / Interests
@@ -551,6 +550,7 @@ button:focus-visible {
 
   line-height: 1.65;
 }
+
 
 /* =========================================================
    12. EDUCATION
@@ -601,6 +601,7 @@ button:focus-visible {
 
   line-height: 1.6;
 }
+
 
 /* =========================================================
    13. SKILLS
@@ -655,15 +656,11 @@ button:focus-visible {
   letter-spacing: 0.02em;
 }
 
-/* Beginner */
-
 .skill-level.beginner {
   background: #eef2f6;
 
   color: #566171;
 }
-
-/* Intermediate */
 
 .skill-level.intermediate {
   background: var(--primary-light);
@@ -671,13 +668,12 @@ button:focus-visible {
   color: var(--primary);
 }
 
-/* Expert */
-
 .skill-level.expert {
   background: var(--primary);
 
   color: white;
 }
+
 
 /* =========================================================
    14. INTERESTS / PERSONAL SKILLS
@@ -720,6 +716,7 @@ button:focus-visible {
 
   transform: translateY(-2px);
 }
+
 
 /* =========================================================
    15. ACTIVITIES PAGE
@@ -809,6 +806,7 @@ button:focus-visible {
   line-height: 1.6;
 }
 
+
 /* =========================================================
    16. DOCUMENT ACTIONS
    ========================================================= */
@@ -822,8 +820,6 @@ button:focus-visible {
 
   white-space: nowrap;
 }
-
-/* View */
 
 .view-link {
   display: inline-flex;
@@ -860,8 +856,6 @@ button:focus-visible {
   transform: translateY(-2px);
 }
 
-/* Download */
-
 .download-link {
   display: inline-flex;
 
@@ -888,6 +882,7 @@ button:focus-visible {
 
   border-color: var(--primary-dark);
 }
+
 
 /* =========================================================
    17. CERTIFICATES PAGE
@@ -998,6 +993,7 @@ button:focus-visible {
   border-color: var(--primary-dark);
 }
 
+
 /* =========================================================
    18. CONTACT PAGE
    ========================================================= */
@@ -1055,6 +1051,8 @@ button:focus-visible {
 
   gap: 15px;
 
+  max-width: 100%;
+
   margin-top: 50px;
 
   padding-bottom: 5px;
@@ -1111,6 +1109,7 @@ button:focus-visible {
   color: white;
 }
 
+
 /* =========================================================
    19. CONTACT PAGE NAVIGATION
    ========================================================= */
@@ -1141,6 +1140,7 @@ button:focus-visible {
 .contact-body .menu-button span {
   background: white;
 }
+
 
 /* =========================================================
    20. FOOTER
@@ -1179,8 +1179,6 @@ button:focus-visible {
   color: var(--primary);
 }
 
-/* Contact footer */
-
 .contact-body .footer {
   background: var(--contact-bg);
 
@@ -1197,11 +1195,18 @@ button:focus-visible {
   color: white;
 }
 
+
 /* =========================================================
    21. TABLET
    ========================================================= */
 
 @media (max-width: 850px) {
+  .home {
+    min-height: auto;
+
+    align-items: flex-start;
+  }
+
   .home-grid {
     grid-template-columns: 1fr;
 
@@ -1209,7 +1214,9 @@ button:focus-visible {
   }
 
   .home-photo {
-    max-width: 350px;
+    width: min(100%, 380px);
+
+    margin-inline: auto;
   }
 
   .home-photo img {
@@ -1231,22 +1238,50 @@ button:focus-visible {
   }
 }
 
+
 /* =========================================================
    22. MOBILE
    ========================================================= */
 
 @media (max-width: 650px) {
-  /* -----------------------------------------
+
+  /* =======================================================
      GENERAL
-     ----------------------------------------- */
+     ======================================================= */
 
   .container {
     width: calc(100% - 32px);
   }
 
-  /* -----------------------------------------
-     NAVIGATION
-     ----------------------------------------- */
+
+  /* =======================================================
+     MOBILE HEADER
+     ======================================================= */
+
+  .header {
+    min-height: 72px;
+  }
+
+  .navbar {
+    min-height: 72px;
+  }
+
+  .logo {
+    max-width: calc(100% - 70px);
+
+    font-size: 1rem;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+
+  /* =======================================================
+     MOBILE MENU BUTTON
+     ======================================================= */
 
   .menu-button {
     display: block;
@@ -1254,6 +1289,8 @@ button:focus-visible {
     position: relative;
 
     z-index: 1002;
+
+    flex-shrink: 0;
   }
 
   .menu-button.active span:first-child {
@@ -1263,6 +1300,11 @@ button:focus-visible {
   .menu-button.active span:last-child {
     transform: translateY(-4.5px) rotate(-45deg);
   }
+
+
+  /* =======================================================
+     MOBILE NAVIGATION
+     ======================================================= */
 
   .nav-links {
     position: fixed;
@@ -1278,11 +1320,16 @@ button:focus-visible {
     align-items: flex-start;
     justify-content: center;
 
-    gap: 24px;
+    gap: 22px;
 
-    padding: 40px;
+    padding:
+      max(90px, env(safe-area-inset-top))
+      28px
+      max(40px, env(safe-area-inset-bottom));
 
     background: var(--background);
+
+    overflow-y: auto;
 
     transform: translateY(-100%);
 
@@ -1296,14 +1343,16 @@ button:focus-visible {
   .nav-links a {
     color: var(--text);
 
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 7vw, 1.9rem);
     font-weight: 500;
+
+    line-height: 1.2;
 
     letter-spacing: -0.04em;
   }
 
   .nav-links a::after {
-    bottom: -3px;
+    bottom: -4px;
   }
 
   .nav-links a:hover,
@@ -1311,9 +1360,10 @@ button:focus-visible {
     color: var(--primary);
   }
 
-  /* -----------------------------------------
+
+  /* =======================================================
      CONTACT MOBILE NAVIGATION
-     ----------------------------------------- */
+     ======================================================= */
 
   .contact-body .nav-links {
     background: var(--contact-bg);
@@ -1328,48 +1378,175 @@ button:focus-visible {
     color: white;
   }
 
-  /* -----------------------------------------
-     HOME
-     ----------------------------------------- */
+
+  /* =======================================================
+     HOME PAGE — MOBILE OPTIMIZED
+     ======================================================= */
 
   .home {
     min-height: auto;
 
-    padding: 125px 0 80px;
+    /*
+       This provides enough space below
+       the fixed navigation bar.
+    */
+    padding:
+      calc(105px + env(safe-area-inset-top))
+      0
+      65px;
+
+    /*
+       IMPORTANT:
+       Desktop uses flex + vertical centering.
+       Mobile should start naturally from the top.
+    */
+    display: block;
+
+    align-items: initial;
   }
 
+  .home-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+
+    align-items: start;
+  }
+
+  .home-content {
+    position: relative;
+
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .home .small-label {
+    margin-bottom: 18px;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.12em;
+  }
+
+  /*
+     Smaller and safer heading for phones.
+  */
+
   .home h1 {
-    font-size: clamp(3.6rem, 18vw, 6rem);
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-top: 0;
+
+    color: var(--text);
+
+    font-size: clamp(3rem, 14vw, 5rem);
+
+    font-weight: 500;
 
     line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    overflow-wrap: break-word;
+  }
+
+  /*
+     Name gets its own line.
+  */
+
+  .home h1 span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--primary);
   }
 
   .intro {
-    margin-top: 28px;
+    width: 100%;
 
-    font-size: 1rem;
+    max-width: 540px;
+
+    margin-top: 26px;
+
+    color: var(--muted);
+
+    font-size: 0.98rem;
+
+    line-height: 1.7;
   }
+
+
+  /* =======================================================
+     HOME LINKS
+     ======================================================= */
 
   .home-links {
-    flex-direction: column;
+    margin-top: 28px;
 
-    align-items: flex-start;
+    display: flex;
 
-    gap: 18px;
+    flex-direction: row;
 
-    font-size: 1rem;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 16px 24px;
+
+    font-size: 0.95rem;
   }
+
+  .primary-link {
+    min-height: 44px;
+
+    align-items: center;
+  }
+
+
+  /* =======================================================
+     HOME PHOTO
+     ======================================================= */
 
   .home-photo {
-    max-width: 300px;
+    position: relative;
+
+    width: min(100%, 320px);
+
+    max-width: none;
+
+    margin: 5px auto 0;
   }
 
-  /* -----------------------------------------
+  .home-photo img {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+  }
+
+  .home-photo::after {
+    width: 40%;
+
+    margin-top: 12px;
+  }
+
+
+  /* =======================================================
      INNER PAGES
-     ----------------------------------------- */
+     ======================================================= */
 
   .page {
-    padding: 125px 0 80px;
+    padding:
+      calc(110px + env(safe-area-inset-top))
+      0
+      80px;
   }
 
   .page-heading {
@@ -1377,30 +1554,52 @@ button:focus-visible {
   }
 
   .page-heading h1 {
-    font-size: clamp(3.2rem, 15vw, 5.5rem);
+    font-size: clamp(3rem, 14vw, 5.5rem);
 
     line-height: 1;
+
+    overflow-wrap: break-word;
   }
 
-  /* -----------------------------------------
+  .page-heading > p:last-child {
+    margin-top: 22px;
+  }
+
+
+  /* =======================================================
      ABOUT
-     ----------------------------------------- */
+     ======================================================= */
 
   .about-layout {
+    grid-template-columns: 1fr;
+
     gap: 40px;
   }
 
   .about-photo {
-    max-width: 300px;
+    width: min(100%, 300px);
+
+    max-width: none;
+  }
+
+  .about-text {
+    width: 100%;
   }
 
   .about-text p {
     font-size: 1rem;
   }
 
-  /* -----------------------------------------
+  .about-text .about-intro {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+
+    line-height: 1.4;
+  }
+
+
+  /* =======================================================
      CONTENT
-     ----------------------------------------- */
+     ======================================================= */
 
   .content-section {
     margin-top: 80px;
@@ -1414,9 +1613,10 @@ button:focus-visible {
     gap: 12px;
   }
 
-  /* -----------------------------------------
+
+  /* =======================================================
      EDUCATION
-     ----------------------------------------- */
+     ======================================================= */
 
   .list-row {
     flex-direction: column;
@@ -1428,22 +1628,24 @@ button:focus-visible {
     padding-left: 8px;
   }
 
-  /* -----------------------------------------
+
+  /* =======================================================
      SKILLS
-     ----------------------------------------- */
+     ======================================================= */
 
   .skill-row {
     gap: 15px;
   }
 
-  /* -----------------------------------------
+
+  /* =======================================================
      DOCUMENTS / ACTIVITIES
-     ----------------------------------------- */
+     ======================================================= */
 
   .document-row {
     grid-template-columns:
       35px
-      1fr;
+      minmax(0, 1fr);
 
     gap: 12px 15px;
   }
@@ -1451,6 +1653,10 @@ button:focus-visible {
   .document-row:hover {
     padding-left: 8px;
     padding-right: 8px;
+  }
+
+  .document-info {
+    min-width: 0;
   }
 
   .document-actions {
@@ -1467,10 +1673,14 @@ button:focus-visible {
     gap: 15px;
 
     margin-top: 8px;
+
+    white-space: normal;
   }
 
   .document-info h2 {
     font-size: 1.25rem;
+
+    overflow-wrap: break-word;
   }
 
   .view-link,
@@ -1478,11 +1688,14 @@ button:focus-visible {
     font-size: 0.9rem;
   }
 
-  /* -----------------------------------------
+
+  /* =======================================================
      CERTIFICATES
-     ----------------------------------------- */
+     ======================================================= */
 
   .certificate-grid {
+    grid-template-columns: 1fr;
+
     gap: 50px;
   }
 
@@ -1496,20 +1709,28 @@ button:focus-visible {
     gap: 20px;
   }
 
-  /* -----------------------------------------
+
+  /* =======================================================
      CONTACT
-     ----------------------------------------- */
+     ======================================================= */
 
   .contact-page {
-    min-height: calc(100vh - 70px);
+    min-height: 100vh;
 
-    padding: 130px 0 80px;
+    padding:
+      calc(115px + env(safe-area-inset-top))
+      0
+      80px;
   }
 
   .contact-page h1 {
-    font-size: clamp(3.7rem, 18vw, 6.5rem);
+    max-width: 100%;
+
+    font-size: clamp(3.2rem, 16vw, 6.5rem);
 
     line-height: 0.95;
+
+    overflow-wrap: break-word;
   }
 
   .contact-description {
@@ -1517,6 +1738,10 @@ button:focus-visible {
   }
 
   .big-email {
+    max-width: 100%;
+
+    font-size: clamp(1.05rem, 5.5vw, 1.7rem);
+
     word-break: break-word;
   }
 
@@ -1524,9 +1749,14 @@ button:focus-visible {
     margin-top: 75px;
   }
 
-  /* -----------------------------------------
+
+  /* =======================================================
      FOOTER
-     ----------------------------------------- */
+     ======================================================= */
+
+  .footer {
+    padding: 24px 0;
+  }
 
   .footer-content {
     flex-direction: column;
@@ -1539,22 +1769,88 @@ button:focus-visible {
   }
 }
 
+
 /* =========================================================
    23. VERY SMALL SCREENS
+   320px - 400px
    ========================================================= */
 
 @media (max-width: 400px) {
-  .home h1 {
-    font-size: 3.4rem;
+
+  .container {
+    width: calc(100% - 28px);
   }
+
+
+  /* HOME */
+
+  .home {
+    padding:
+      calc(98px + env(safe-area-inset-top))
+      0
+      55px;
+  }
+
+  .home-grid {
+    gap: 35px;
+  }
+
+  .home .small-label {
+    margin-bottom: 15px;
+
+    font-size: 0.68rem;
+  }
+
+  .home h1 {
+    font-size: clamp(2.65rem, 14vw, 3.4rem);
+
+    line-height: 0.97;
+
+    letter-spacing: -0.05em;
+  }
+
+  .home h1 span {
+    margin-top: 5px;
+  }
+
+  .intro {
+    margin-top: 22px;
+
+    font-size: 0.94rem;
+
+    line-height: 1.65;
+  }
+
+  .home-links {
+    margin-top: 24px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .home-photo {
+    width: min(100%, 280px);
+  }
+
+
+  /* INNER PAGE HEADINGS */
 
   .page-heading h1 {
-    font-size: 3.1rem;
+    font-size: clamp(2.7rem, 14vw, 3.5rem);
   }
 
+
+  /* CONTACT */
+
   .contact-page h1 {
-    font-size: 3.7rem;
+    font-size: clamp(3rem, 16vw, 4rem);
   }
+
+
+  /* SKILLS */
 
   .skill-row {
     align-items: flex-start;
@@ -1564,22 +1860,63 @@ button:focus-visible {
     gap: 10px;
   }
 
+
+  /* CERTIFICATES */
+
   .certificate-details {
     flex-direction: column;
   }
 
+
+  /* DOCUMENTS */
+
   .document-row {
     grid-template-columns:
       30px
-      1fr;
+      minmax(0, 1fr);
   }
 }
 
+
 /* =========================================================
-   24. REDUCED MOTION / ACCESSIBILITY
+   24. SHORT MOBILE SCREENS
+   ========================================================= */
+
+/*
+   Some phones have enough width but very little height.
+   This prevents the homepage from being pushed off screen.
+*/
+
+@media (max-width: 650px) and (max-height: 700px) {
+
+  .home {
+    padding-top: calc(92px + env(safe-area-inset-top));
+  }
+
+  .home h1 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+  }
+
+  .home .small-label {
+    margin-bottom: 12px;
+  }
+
+  .intro {
+    margin-top: 20px;
+  }
+
+  .home-links {
+    margin-top: 22px;
+  }
+}
+
+
+/* =========================================================
+   25. REDUCED MOTION / ACCESSIBILITY
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
