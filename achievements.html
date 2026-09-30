@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Achievements, seminars, training, and professional development portfolio.">
+  <title>Achievements | Portfolio</title>
+
+  <!-- Uses the same stylesheet as the rest of the portfolio -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Page-specific styles built from the same variables/design language -->
+  <style>
+    .achievements-page {
+      background: var(--background);
+    }
+
+    .achievement-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .achievement {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+      gap: 50px;
+      padding: 55px 0;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .achievement-image {
+      display: block;
+      padding: 20px;
+      overflow: hidden;
+      background: var(--primary-light);
+      border: 1px solid transparent;
+      transition:
+        border-color var(--transition),
+        background var(--transition);
+    }
+
+    .achievement-image:hover {
+      background: #edf3f9;
+      border-color: #cad8e6;
+    }
+
+    .achievement-image img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .achievement-image:hover img {
+      transform: scale(1.02);
+    }
+
+    .achievement-number {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .achievement-details h2 {
+      margin-top: 8px;
+      color: var(--text);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+
+    .achievement-meta {
+      margin-top: 14px;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .achievement-description {
+      max-width: 620px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .achievement-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .achievement-actions .text-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 8px 2px;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition:
+        color var(--transition),
+        border-color var(--transition);
+    }
+
+    .achievement-actions .text-link:hover {
+      color: var(--primary-dark);
+      border-color: var(--primary-dark);
+    }
+
+    .photo-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 850px) {
+      .achievement {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .achievement-image {
+        max-width: 650px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .achievement {
+        padding: 40px 0;
+        gap: 25px;
+      }
+
+      .achievement-image {
+        padding: 14px;
+      }
+
+      .achievement-details h2 {
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
+      }
+    }
+  </style>
+</head>
+
+<body class="achievements-page">
+
+  <!-- NAVIGATION -->
+  <header class="header">
+    <div class="container navbar">
+      <!-- Replace with the same name/logo used on your other pages -->
+      <a href="index.html" class="logo">My Portfolio</a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Edit filenames below if your existing pages use different names -->
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="activities.html">Activities</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="achievements.html" class="active" aria-current="page">Achievements</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+
+      <!-- PAGE HEADING -->
+      <section class="page-heading">
+        <p class="small-label">Portfolio</p>
+        <h1>Achievements</h1>
+        <p>
+          A collection of seminars, training programs, and learning experiences
+          that contributed to my personal, academic, and professional growth.
+        </p>
+      </section>
+
+      <section class="achievement-list" aria-label="Achievements">
+
+        <!-- =====================================================
+             ACHIEVEMENT 01 — SOFT SKILLS SEMINAR
+             Replace the image src with your seminar photo.
+             Example:
+             src="images/soft-skills-seminar.jpg"
+             ===================================================== -->
+        <article class="achievement">
+          <div>
+            <a
+              href="images/soft-skills-seminar.jpg"
+              target="_blank"
+              class="achievement-image"
+              aria-label="View Soft Skills Seminar photo"
+            >
+              <img
+                src="images/soft-skills-seminar.jpg"
+                alt="Photo taken during the Soft Skills Seminar"
+              >
+            </a>
+            <p class="photo-note">
+              Replace <strong>images/soft-skills-seminar.jpg</strong> with your actual seminar photo.
+            </p>
+          </div>
+
+          <div class="achievement-details">
+            <p class="achievement-number">Achievement 01</p>
+            <p class="small-label">Seminar</p>
+
+            <h2>Soft Skills Seminar</h2>
+
+            <p class="achievement-meta">
+              J.H. Cerilles State College (JHCSC) · 2026
+            </p>
+
+            <p class="achievement-description">
+              Participated in a seminar focused on strengthening essential
+              soft skills for personal, academic, and professional development,
+              including communication, interpersonal skills, and workplace readiness.
+            </p>
+
+            <div class="achievement-actions">
+              <a
+                href="https://drive.google.com/file/d/1m9GKhjrDLw5bb4Gtmzdl_qin0S6duugw/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="view-link"
+              >
+                View Certificate ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- =====================================================
+             ACHIEVEMENT 02 — TEMPLATE
+             Duplicate this entire <article> for another seminar.
+             ===================================================== -->
+        <article class="achievement">
+          <div>
+            <a
+              href="images/achievement-02.jpg"
+              target="_blank"
+              class="achievement-image"
+              aria-label="View achievement photo"
+            >
+              <img
+                src="images/achievement-02.jpg"
+                alt="Photo from seminar or training activity"
+              >
+            </a>
+            <p class="photo-note">
+              Replace <strong>images/achievement-02.jpg</strong> with your image.
+            </p>
+          </div>
+
+          <div class="achievement-details">
+            <p class="achievement-number">Achievement 02</p>
+            <p class="small-label">Seminar / Training</p>
+
+            <h2>Achievement Title</h2>
+
+            <p class="achievement-meta">
+              Organization · 2026
+            </p>
+
+            <p class="achievement-description">
+              Add a short description of the seminar, training, workshop, or
+              achievement and explain what you learned or gained from the experience.
+            </p>
+
+            <div class="achievement-actions">
+              <!-- Replace # with the certificate link, or remove this link if none -->
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="view-link"
+              >
+                View Certificate ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- =====================================================
+             ACHIEVEMENT 03 — TEMPLATE
+             ===================================================== -->
+        <article class="achievement">
+          <div>
+            <a
+              href="images/achievement-03.jpg"
+              target="_blank"
+              class="achievement-image"
+              aria-label="View achievement photo"
+            >
+              <img
+                src="images/achievement-03.jpg"
+                alt="Photo from seminar or training activity"
+              >
+            </a>
+            <p class="photo-note">
+              Replace <strong>images/achievement-03.jpg</strong> with your image.
+            </p>
+          </div>
+
+          <div class="achievement-details">
+            <p class="achievement-number">Achievement 03</p>
+            <p class="small-label">Seminar / Training</p>
+
+            <h2>Achievement Title</h2>
+
+            <p class="achievement-meta">
+              Organization · 2026
+            </p>
+
+            <p class="achievement-description">
+              Add a short description of your participation, the purpose of the
+              activity, and the knowledge or skills you gained from it.
+            </p>
+
+            <div class="achievement-actions">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="view-link"
+              >
+                View Certificate ↗
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 My Portfolio</p>
+      <a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+        Back to top ↑
+      </a>
+    </div>
+  </footer>
+
+  <!-- MOBILE NAVIGATION -->
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuButton && navLinks) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("active");
+        menuButton.classList.toggle("active", isOpen);
+        menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          menuButton.classList.remove("active");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
